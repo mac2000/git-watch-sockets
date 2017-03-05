@@ -1,7 +1,7 @@
 Main idea of project is to have always running server which:
 
-1. Listens for incoming webhooks
-2. Broadcast messages to every connected client
+- Listens for incoming webhooks
+- Broadcast messages to every connected client
 
 Having that in place local application can be build which may listen for websocket messages, and if there is something happening on known git repository try to fetch it and in case of fast forward merge apply changes automatically or may be notify user about possible merge conflicts
 
