@@ -12,6 +12,7 @@ const event = new EventEmitter();
 app.use(express.static('.'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.set('trust proxy', true)
 
 const server = http.createServer(app)
 const wss = new WebSocket.Server({
