@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>git watch</title>
+	</head>
+
+	<body>
+		<h3>Git Watch</h3>
+		<p>Listen for webhooks and promote them via websocket</p>
+		<p>JWT is required and can be obtained <a href="http://adjwt.rabota.ua:58083/">here</a></p>
+
+		<p>Usage example:</p>
+		<pre>
+			const token = '...'
+			const socket = new WebSocket(`ws://localhost:3000?access_token=${token}`)
+			socket.onmessage = event => console.log(JSON.parse(event.data))
+		</pre>
+		<p><em>Do not forget to replace localhost:3000 to correct value</em></p>
+		<p><b>Notes</b></p>
+		<ul>
+			<li>App should be watching and refreshing token if needed, git watch itself does not know nothing about token server</li>
+			<li>App should be ready for connection loose e.g. new version is deployed or connectivity issues</li>
+		</ul>
+	</body>
+
+</html>
