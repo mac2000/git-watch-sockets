@@ -37,10 +37,10 @@ wss.on('connection', ws => {
 })
 
 app.post('/bitbucket', (req, res) => {
-	req.body.ip = req.ip
-	// if (req.ip.indexOf('104.192.143') === 0) {
-	event.emit('broadcast', req.body)
-	// }
+	// req.body.ip = req.ip
+	if (req.ip.indexOf('104.192.143') === 0) {
+		event.emit('broadcast', req.body)
+	}
 	res.sendStatus(200)
 })
 
